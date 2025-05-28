@@ -3,7 +3,7 @@ name: Email Reminder Scheduler
 # Futtatás ütemezve: minden nap 08:00-kor (UTC szerint)
 on:
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "20 15 * * *"
   # Manuális futtatás is lehetséges
   workflow_dispatch:
 
