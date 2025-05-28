@@ -1,0 +1,16 @@
+{
+  "name": "ismetlasi-utemezo",
+  "version": "1.0.0",
+  "description": "Spaced Repetition tanuló segéd alkalmazás email értesítéssel, magyar nyelvű felülettel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "emailreminder": "node emailReminder.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.2"
+  },
+  "author": "Gergő",
+  "license": "ISC"
+}
