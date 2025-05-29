@@ -1,9 +1,9 @@
 name: Email Reminder Scheduler
 
 on:
-  workflow_dispatch:      # Ez engedélyezi a manuális indítást
+  workflow_dispatch: {}  # Manuális indítás engedélyezése
   schedule:
-    - cron: "45 10 * * *" # Ez azt jelenti, hogy UTC szerint 13:35-kor fut – ez GMT+2 esetén 15:35 helyi idő
+    - cron: "45 10 * * *"  # 10:45 UTC = 12:45 CEST
 
 jobs:
   emailReminder:
