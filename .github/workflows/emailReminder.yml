@@ -1,8 +1,16 @@
-emailReminder:
+name: Email Reminder Scheduler
+
+on:
+  workflow_dispatch:      # Ez engedélyezi a manuális indítást
+  schedule:
+    - cron: "42 10 * * *" # Ez azt jelenti, hogy UTC szerint 13:35-kor fut – ez GMT+2 esetén 15:35 helyi idő
+
+jobs:
+  emailReminder:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Setup Node.js
@@ -14,10 +22,4 @@ emailReminder:
         run: npm install
 
       - name: Run email reminder script
-        env:
-          SMTP_HOST: ${{ secrets.SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_SECURE: ${{ secrets.SMTP_SECURE }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: npm run emailreminder
